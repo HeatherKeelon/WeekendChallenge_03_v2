@@ -1,0 +1,19 @@
+{
+  "name": "weekend_challenge_03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "author": "Heather Lutz",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "bootstrap": "^3.3.5",
+    "express": "^4.13.3",
+    "jquery": "^2.1.4",
+    "path": "^0.12.7"
+  }
+}
