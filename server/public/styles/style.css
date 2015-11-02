@@ -5,6 +5,11 @@
     margin: 2px;
     display: inline-block;
     text-align: center;
+    background-color: white;
+}
+
+.btn:hover {
+    background-color: #c9e0eb;
 }
 
 .clear {
@@ -12,7 +17,13 @@
     height: 50px;
     border: 1px solid black;
     text-align: center;
+    background-color: red;
+    color: white;
 
+}
+
+.clear:hover {
+    background-color: #ffae00;
 }
 
 .val-field {
@@ -33,4 +44,25 @@ main {
 
 header {
     text-align: center;
+}
+
+.wrapper {
+    border: 1px solid black;
+    padding: 10px 5px 10px 20px;
+    background-color: #9d9d9d;
+    border-radius: 20px;
+
+}
+
+#buttonBox {
+    margin-top: 10px;
+    text-align: center;
+}
+
+header {
+    height: 100px;
+}
+
+#clearBtn {
+    text-align: left;
 }

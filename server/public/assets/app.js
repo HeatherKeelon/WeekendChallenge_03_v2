@@ -1,10 +1,10 @@
 /**
  * Created by user on 10/30/15.
  */
-
+    //Two variables. toBeCalculated handles the data being sent up to the sever, total is tracking the total of data coming from the server so that the calculator can chain multiple calculations.
 var toBeCalculated = {};
 var total=0;
-
+//document ready handles all button events.
 $(document).ready(function(){
 
 
@@ -62,6 +62,7 @@ $(document).ready(function(){
         var text = $('.val-field');
         text.val(text.val() + '.');
     });
+    //the calculations need an if/else depending upon whether or not total is 0.
 
     $("#addition").on('click', function(){
         if (total==0){
@@ -143,7 +144,7 @@ $(document).ready(function(){
 
 
 
-
+//strips the entry field and determines value1 in toBeCalculated.
 function calcValOne (){
     $.each($("#entryField").serializeArray(), function(i, field){
         toBeCalculated[field.name]=field.value;
@@ -153,6 +154,7 @@ function calcValOne (){
 
 }
 
+//strips the entry field and determines value2 in toBeCalculated.
 function calcValTwo(){
     $.each($("#entryField").serializeArray(), function(i, field){
         toBeCalculated[field.name]=field.value;
@@ -162,6 +164,7 @@ function calcValTwo(){
 
 }
 
+//ajax call that Posts the toBeCalculated object. Receives the answer of the calculation sent up as data.
 function getAnswer(){
     $.ajax({
         type: "POST",
@@ -171,12 +174,8 @@ function getAnswer(){
             console.log("Here is the calculation object ", toBeCalculated);
         },
     success: function postAnswer(data){
-        if (total==0){
-            total+=Number(data);
-            console.log(total);
-        }else{
             total=Number(data);
-        }
+
         $(".val-field").val(total);
     }
 
@@ -184,10 +183,12 @@ function getAnswer(){
 
 }
 
+//The function for changing the name value in the input field. Used so that I can input a value1 and a value2 using the same field.
 function changeName(){
     $("#entryField").children().last().attr('name', 'value2');
 }
 
+//Changes the input field's name attribute back to value1.
 function originalName(){
     $("#entryField").children().last().attr('name', 'value1');
 }
